@@ -12,13 +12,13 @@ root: ..
 #### Shell
 [Challenges](Shell_challenge.html)
 
-1. [Introduction](00-intro.html)
-2. [Exploring](01-filedir.html)
-3. [Creating things](shell_02-create.html)
-4. [Chaining commands](03-pipefilter.html)
-5. [Making a loop](04-loop.html)
-6. [Shell script](05-script.html)
-7. [Find using shell](06-find.html)
+1. [Introduction](shell-novice/00-intro.html)
+2. [Exploring](shell-novice/01-filedir.html)
+3. [Creating things](shell-novice/shell_02-create.html)
+4. [Chaining commands](shell-novice/03-pipefilter.html)
+5. [Making a loop](shell-novice/04-loop.html)
+6. [Shell script](shell-novice/05-script.html)
+7. [Find using shell](shell-novice/06-find.html)
 
 
 #### R
