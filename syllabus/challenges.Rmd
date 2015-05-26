@@ -1,0 +1,386 @@
+---
+title: "Challenges"
+author: "Asela Wijeratne"
+date: "May 24, 2015"
+output: html_document
+
+---
+##Introduction to RStudio
+####Challenge 1
+
+Explore the options and enable the option Highlight selected line. Change the default theme to something different.
+
+####Challenge 2
+
+Draw diagrams showing what variables refer to what values after each statement in the following program:
+```{r}
+mass <- 47.5
+age <- 122
+mass <- mass * 2.3
+age <- age - 20
+
+```
+
+####Challenge 3
+
+Run the code from the previous challenge, and write a command to compare mass to age. Is mass larger than age?
+
+
+####Challenge 4
+
+Clean up your working environment by deleting the mass and age variables.
+
+<div class="toc" markdown="1">
+
+##Project management with RStudio
+
+####Challenge 1
+
+Download the gapminer data from [here](https://github.com/resbaz/r-novice-gapminder-files).
+
+Use the Download ZIP located on the right hand side menu, last option. To download the .zip file to your downloads folder.
+Unzip the file.
+Move the file to the data/ within your project.
+We will load and inspect these data latter today.
+
+####Challenge 2
+
+Use packrat to install the packages we'll be using later:
+```
+ggplot2
+plyr
+```
+
+##Data Structure 1
+
+####Challenge 1: Data types
+
+Use your knowledge of how to assign a value to a variable, to create examples of data with the following characteristics:
+
+Variable name: 'answer', Type: logical
+Variable name: 'height', Type: numeric
+Variable name: 'dog_name', Type: character
+For each variable you've created, test that it has the data type you intended. Do you find anything unexpected?
+
+
+####Challenge 2
+
+Vectors can only contain one atomic type. If you try to combine different types, R will create a vector that is the least common denominator: the type that is easiest to coerce to.
+
+Guess what the following do without running them first:
+
+```{r}
+xx <- c(1.7, "a") 
+xx <- c(TRUE, 2) 
+xx <- c("a", TRUE) 
+```
+
+####Challenge 3
+What do you think will be the result of ```length(x)```? Try it. Were you right? Why / why not?
+
+
+####Challenge 4
+Make another matrix, this time containing the numbers 1:50, with 5 columns and 10 rows. Did the matrix function fill your matrix by column, or by row, as its default behavior? See if you can figure out how to change this. (hint: read the documentation for matrix!)
+
+
+####Challenge 5
+Create a list containing two character vectors for each of the sections in this part of the workshop:
+
+- Data types
+- Data structures
+- Populate each character vector with the names of the data types and data structures we've seen so far.
+
+
+##Data structure 2
+
+####Challenge: Dataframes
+
+Try using the length function to query your dataframe df. Does it give the result you expect?
+
+
+####Challenge 2
+
+Create a dataframe that holds the following information for yourself:
+
+First name
+Last name
+Age
+
+
+
+##Subsetting
+####Challege 1
+```{r}
+x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+names(x) <- c('a', 'b', 'c', 'd', 'e')
+print(x)
+```
+
+```
+  a   b   c   d   e
+5.4 6.2 7.1 4.8 7.5
+```
+
+
+1. Come up with at least 3 different commands that will produce the following output:
+
+```
+  b   c   d
+6.2 7.1 4.8
+```
+2. Compare notes with your neighbor. Did you have different strategies?
+
+####Challenge 2
+```{r}
+x <- c(5.4, 6.2, 7.1, 4.8, 7.5)
+names(x) <- c('a', 'b', 'c', 'd', 'e')
+print(x)
+```
+ 
+Write a sub-setting command to return the values in x that are greater than 4 and less than 7.
+
+####Challenge 3
+```{r}
+m <- matrix(1:18, nrow=3, ncol=6)
+print(m)
+```
+
+```
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    1    4    7   10   13   16
+[2,]    2    5    8   11   14   17
+[3,]    3    6    9   12   15   18
+```
+
+Which of the following commands will extract the values 11 and 14?
+```
+A. m[2,4,2,5]
+
+B. m[2:5]
+
+C. m[4:5,2]
+
+D. m[2,c(4,5)]
+```
+
+####Challenge 4
+
+Given the following list:
+```{r}
+xlist <- list(a = "Software Carpentry", b = 1:10, data = head(iris)) 
+```
+
+Using your knowledge of both list and vector subsetting, extract the number 2 from xlist. Hint: the number 2 is contained within the "b" item in the list.
+
+Given a linear model:
+
+```
+mod <- aov(pop ~ lifeExp, data=gapminder)
+```
+
+Extract the residual degrees of freedom (hint: attributes() will help you)
+
+
+####Challenge 5
+
+Fix each of the following common data frame subsetting errors:
+
+1. Extract observations collected for the year 1957
+
+```
+gapminder[gapminder$year = 1957,]
+```
+
+2. Extract all columns except 1 through to 4
+
+```
+gapminder[,-1:4]
+```
+
+3. Extract the rows where the life expectancy is longer the 80 years
+
+```
+gapminder[gapminder$lifeExp > 80]
+```
+
+4. Extract the first row, and the fourth and fifth columns (lifeExp and gdpPercap).
+
+```
+gapminder[1, 4, 5]
+```
+5. Advanced: extract rows that contain information for the years 2002 and 2007
+
+```
+gapminder[gapminder$year == 2002 | 2007,]
+```
+
+####Challenge 6
+
+Why does ```gapminder[1:20]``` return an error? How does it differ from ```gapminder[1:20, ]```?
+
+Create a new data.frame called gapminder_small that only contains rows 1 through 9 and 19 through 23. You can do this in one or two steps.
+
+
+##Creating functions
+
+####Challenge 1
+
+The paste function can be used to combine text together, e.g:
+```{r}
+best_practice <- c("Write", "programs", "for", "people", "not", "computers")
+paste(best_practice, collapse=" ")
+```
+
+
+Write a function called fence that takes two vectors as arguments, called text and wrapper, and prints out the text wrapped with the wrapper:
+
+```
+fence(text=best_practice, wrapper="***")
+```
+
+```
+[1] "*** Write programs for people not computers ***"
+```
+
+_Note_: the paste function has an argument called sep, which specifies the separator between text. The default is a space: " ". The default for paste0 is no space "".
+
+##Creating publication quality graphics
+
+####Challenge 1
+
+Create density plots of GDP per capita, colored by continent. Hints: - Use ```ggplot``` to set up the basic plot. - Use aes to tell ```ggplot``` what the axes of the plot are (you will only need the x-axis). - Use aes to specify the color grouping. - The geometry layer for density plots is geom_density.
+
+Advanced: - The ```fill``` aesthetic will color the area under the curve. - Transform the scale of the x-axis to more easily visualise the difference between continents
+
+####Challenge 2
+
+Add a facet layer to panel the density plots by year. Hint: [facet_wrap](http://docs.ggplot2.org/current/facet_wrap.html) will be more useful than facet_grid.
+
+
+##Vectorisation
+
+####Challenge 1
+
+Make a new column in the gapminder dataframe that contains population in units of millions of people. Check the head or tail of the dataframe to make sure it worked.
+
+####Challenge 2
+
+Create a subset of the gapminder dataset countaining entries only for Australia.
+
+Calculate the mean GDP (GDP per capita multiplied by total population) for Australia over all years on record.
+
+####Challenge 3
+
+What do you think will happen if you add (or subtract, multiply, divide etc.) vectors of different lengths?
+
+Try it. What does ```x + c(1,3)``` give you? Why?
+
+
+##Control flow
+
+
+####Challenge 1
+
+Use an ```if``` statement to print a suitable message reporting whether there are any records from 2002 in the gapminder dataset. Now do the same for 2012.
+
+Did anyone get a warning message like this?
+
+```
+Warning message:
+In if (gapminder$year == 2012) { :
+  the condition has length > 1 and only the first element will be used
+```
+
+####Challenge 2
+
+Use a while loop to construct a vector called 'pet_list' with the value: ```'cat', 'dog', 'dog', 'dog', 'dog'``` (N.B. using a loop may not be the most efficient way to do this, but it illustrates the principle!)
+
+
+####Challenge 3
+
+Compare the objects ```output_vector``` and ```output_vector2```. Are they the same? If not, why not? How would you change the last block of code to make ```output_vector2``` the same as ```output_vector```?
+
+####Challenge 4
+
+Write a script that loops through the gapminder data by continent and prints out whether the mean life expectancy is smaller or larger than 50 years.
+
+####Challenge 5
+
+Modify the script from Challenge 4 to also loop over each country. This time print out whether the life expectancy is smaller than 50, between 50 and 70, or greater than 70.
+
+####Challenge 6 - Advanced
+
+Write a script that loops over each country in the gapminder dataset, tests whether the country starts with a 'B', and graphs life expectancy against time as a line graph if the mean life expectancy is under 50 years.
+
+##Writing data
+
+####Challenge 1
+
+Rewrite your 'pdf' command to print a second page in the pdf, showing a facet plot (hint: use ```facet_grid```) of the same data with one panel per continent.
+
+
+####Challenge 2
+
+Write a data-cleaning script file that subsets the gapminder data to include only data points collected since 1990.
+
+Use this script to write out the new subset to a file in the ```cleaned-data/``` directory.
+
+##Split-apply-combine
+
+####Challenge 1
+
+Calculate the average life expectancy per continent. Which has the longest? Which had the shortest?
+
+####Challenge 2
+
+Calculate the average life expectancy per continent and year. Which had the longest and shortest in 2007? Which had the greatest change in between 1952 and 2007?
+
+####Advanced Challenge
+
+Calculate the difference in mean life expectancy between the years 1952 and 2007 from the output of challenge 2 using one of the plyr functions.
+
+####_Alternate Challenge_
+
+Without running them, which of the following will calculate the average life expectancy per continent:
+```
+ddply(
+  .data = gapminder,
+  .variables = gapminder$continent,
+  .fun = function(dataGroup) {
+ mean(dataGroup$lifeExp)
+  }
+)
+```
+
+```
+ddply(
+  .data = gapminder,
+  .variables = "continent",
+  .fun = mean(dataGroup$lifeExp)
+)
+```
+```
+ddply(
+  .data = gapminder,
+  .variables = "continent",
+  .fun = function(dataGroup) {
+ mean(dataGroup$lifeExp)
+  }
+)
+```
+
+```
+adply(
+  .data = gapminder,
+  .variables = "continent",
+  .fun = function(dataGroup) {
+ mean(dataGroup$lifeExp)
+  }
+)
+```
+
+##Wrapping up a project
+
+####Challenge 1
+
+Use ```packrat::bundle``` to bundle up your project into a single portable file.
