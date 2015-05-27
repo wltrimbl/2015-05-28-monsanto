@@ -1,7 +1,7 @@
 % Software Carpentry - Overview
-  Spelman College
+  Monsanto Company 
 % Software Carpentry Team
-% June 2014 
+% May 2015 
 
 ## Copy This Lecture!
 <br></br>
@@ -17,17 +17,14 @@
 ## History
 
 * Founded by Greg Wilson in 1998, teaching scientists how to use supercomputers at LANL.
-* Open sourced materials 2004-present
-* Currently funded by the Sloan Foundation and the Mozilla Foundation
-* This workshop thanks to NSF
+* Open sourced instructional materials 2004-present
+* Currently funded by the Mozilla Foundation, looking for corporate partners
 
 ## What We Teach
 
-* Unix Command Line Interface (Shell)
 * Shell automation 
 * Version Control (using git)
-* Python
-* Testing
+* Python / R 
 
 ## What We *Actually* Teach
 
@@ -37,31 +34,18 @@
 * Paranoia makes us productive
 * Better algorithms beat better hardware
 
-## Who We Teach
-
-<div align="center">
-<table>
-<tr>
-<td><img src="swc-demographics/thumb-age.png" /></td>
-<td><img src="swc-demographics/thumb-role.png" /></td>
-</tr>
-<tr>
-<td><img src="swc-demographics/thumb-gender.png" /></td>
-<td><img src="swc-demographics/thumb-platform.png" /></td>
-</tr>
-</table>
-</div>
-
 ## Who We Are
 
 * Will Trimble (Argonne National Laboratory)
-* Elijah Lowe (Michigan State University)
+* Xu Fei  (Data Literacy Consulting)
+* Asela Wijeratne (Ohio State University)
+* Qingpeng Zhang (Michigan State University)
 * volunteers
  
 ## Our Goals for You
 
-* If you've ever overwritten the wrong file, we'll show you how to use version control.
 * If you've ever spent hours typing the same commands over and over again, we'll show you how to automate those tasks using simple scripts.
+* If you've ever overwritten the wrong file, we'll show you how to use version control.
 * If you've ever spent an afternoon trying to figure out what the program you wrote last week actually does, we'll show you how to break your code into modules that you can read, debug, and improve piece by piece.
 
 ## Some High-Level Advice
@@ -87,7 +71,7 @@ it works faster**
 * If you find yourself typing the same commands again and again
 * If you repeat the same block of code with cut-and-paste more than once
 * If any piece of code is too complex to easily describe, consider refactoring it
-* If you find yourself writing code the same script over and over
+* If you find yourself writing the same script over and over
 
 ## Don't repeat yourself 
 * **Don't repeat commands into your REPL, save them to a script**
@@ -98,8 +82,8 @@ it works faster**
 * Back up everything important in proportion to its replacement value.
 
 ## Document your computational work
-* Save **every bit of code** you use for generating publishable results
-* Save the scripts that get and process the data
+* Save **every bit of code** you use for generating publishable (patentable?) results
+* Save the scripts that get and process the data (You'll thank yourself)
 * Document and comment your code for yourself as if you will need to understand
 it in 6 months
 
@@ -107,12 +91,15 @@ it in 6 months
 <div align="center">
 <table>
 <tr>
-<td><img src="swc-demographics/careful.png" /></td>
+<td><img src="careful.png" /></td>
 </tr>
 </table>
 </div>
 
-## That's all Folks
+## Reminder
+All our instructional materials are open source, collaboratively written. 
+
+You can expect to leave the  workshop with a complete copy of the lessons.
 
 ## Programming Languages for Scientific Computing
 Matthew G. Knepley
