@@ -10,7 +10,7 @@ output: html_document
 Please refer to the following figure when answering the challenges below.
 
 
-![Figure 1](shell-novice/fig/filesystem-challenge.png)
+![Figure 1](Challenge_fig/filesystem-challenge.png)
 
 If pwd displays /users/thing, what will ls ../backup display?
 ```
@@ -39,6 +39,7 @@ What does the command cd without a directory name do?
 We said earlier that spaces in path names have to be marked with a leading backslash in order for the shell to interpret them properly. Why? What happens if we run a command like:
 
 ```$ ls my\ thesis\ files```
+
 without the backslashes?
 
 
@@ -46,6 +47,7 @@ without the backslashes?
 Challenges
 
 1. What is the output of the closing ```ls``` command in the sequence shown below?
+
 ```
 $ pwd
 /home/thing/data
@@ -61,6 +63,7 @@ $ ls
 ```
 $ ls -F
 analyzed/  fructose.dat    raw/   sucrose.dat
+```
 
 What command(s) could you run so that the commands below will produce the output shown?
 ```
@@ -70,45 +73,16 @@ $ ls analyzed
 fructose.dat    sucrose.dat
 ```
 
-3. What does cp do when given several filenames and a directory name, as in:
+3. What does ```cp``` do when given several filenames and a directory name, as in:
 ```
 $ mkdir backup
 $ cp thesis/citations.txt thesis/quotations.txt backup
 ```
 
-Challenges
-In the lesson we started in an empty directory and created several files using the command:
 
-$ touch file{4,6,7}.txt file{a..e}.txt
-$
-What files, if any, would have been created if we had instead used square brackets? I.e.
+4. Why do you think ```cp```'s behavior is different from ```mv```'s?
 
-$ touch file[467].txt file[a-e].txt
-$
-We also discussed the effect of running ls file[AB].txt when neither the file fileA.txt, nor the file fileB.txt, nor the file file[AB].txt existed. What would be the effect of running ls file{A,B}.txt under these circumstances?
-
-Recall the discussion of escaping characters using single quotes, double quotes, and the backslash.
-
-What would the output of ls be if we issued the following bash commands?
-
-$ touch "apple_file\ orange_file"
-$ touch "apple_file orange_file"
-$
-How can we create the same files as in the previous problem without any quotes? Hint: This requires some careful thought about how to apply the backslash notation. Would single quotes have produced different output files if they were used instead of double quotes in the previous problem?
-
-
-
-
-What does cp do when given three or more filenames, as in:
-```
-$ ls -F
-intro.txt    methods.txt    survey.txt
-$ cp intro.txt methods.txt survey.txt
-```
-
-4. Why do you think cp's behavior is different from mv's?
-
-The command ```ls -R``` lists the contents of directories recursively, i.e., lists their sub-directories, sub-sub-directories, and so on in alphabetical order at each level. The command ls -t lists things by time of last change, with most recently changed files or directories first. In what order does ```ls -R -t``` display things?
+5. The command ```ls -R``` lists the contents of directories recursively, i.e., lists their sub-directories, sub-sub-directories, and so on in alphabetical order at each level. The command ls -t lists things by time of last change, with most recently changed files or directories first. In what order does ```ls -R -t``` display things?
 
 ##Pipes and Filters
 Challenges
@@ -178,11 +152,12 @@ What other command(s) could be added to this in a pipeline to find out what anim
 ##Loops
 
 ####Challenges
-Suppose that ls initially displays:
+1. Suppose that ```ls``` initially displays:
 ```
 fructose.dat    glucose.dat   sucrose.dat
 ```
 What is the output of:
+
 ```
 for datafile in *.dat
 do
@@ -201,6 +176,7 @@ done
 2. Prints fructose.dat, glucose.dat, and sucrose.dat, and concatenates all three files to create xylose.dat.
 3. Prints fructose.dat, glucose.dat, sucrose.dat, and xylose.dat, and copies sucrose.dat to create xylose.dat.
 4. None of the above.
+
 
 2. The ```expr``` does simple arithmetic using command-line parameters:
 ```

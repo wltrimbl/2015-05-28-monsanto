@@ -81,14 +81,16 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 3. It changes the working directory to the user's home directory.
 4. It is an error.</code></pre>
 <p>We said earlier that spaces in path names have to be marked with a leading backslash in order for the shell to interpret them properly. Why? What happens if we run a command like:</p>
-<p><code>$ ls my\ thesis\ files</code> without the backslashes?</p>
+<p><code>$ ls my\ thesis\ files</code></p>
+<p>without the backslashes?</p>
 </div>
 </div>
 <div id="creating-things" class="section level2">
 <h2>Creating Things</h2>
 <p>Challenges</p>
 <ol style="list-style-type: decimal">
-<li><p>What is the output of the closing <code>ls</code> command in the sequence shown below?</p>
+<li>What is the output of the closing <code>ls</code> command in the sequence shown below?</li>
+</ol>
 <pre><code>$ pwd
 /home/thing/data
 $ ls
@@ -96,8 +98,11 @@ proteins.dat
 $ mkdir recombine
 $ mv proteins.dat recombine
 $ cp recombine/proteins.dat ../proteins-saved.dat
-$ ls</code></pre></li>
-<li><p>Suppose that: ``` $ ls -F analyzed/ fructose.dat raw/ sucrose.dat</p></li>
+$ ls</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Suppose that:</p>
+<pre><code>$ ls -F
+analyzed/  fructose.dat    raw/   sucrose.dat</code></pre></li>
 </ol>
 <p>What command(s) could you run so that the commands below will produce the output shown?</p>
 <pre><code>$ ls
@@ -105,24 +110,12 @@ analyzed   raw
 $ ls analyzed
 fructose.dat    sucrose.dat</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li><p>What does cp do when given several filenames and a directory name, as in:</p>
+<li><p>What does <code>cp</code> do when given several filenames and a directory name, as in:</p>
 <pre><code>$ mkdir backup
 $ cp thesis/citations.txt thesis/quotations.txt backup</code></pre></li>
+<li><p>Why do you think <code>cp</code>’s behavior is different from <code>mv</code>’s?</p></li>
+<li><p>The command <code>ls -R</code> lists the contents of directories recursively, i.e., lists their sub-directories, sub-sub-directories, and so on in alphabetical order at each level. The command ls -t lists things by time of last change, with most recently changed files or directories first. In what order does <code>ls -R -t</code> display things?</p></li>
 </ol>
-<p>Challenges In the lesson we started in an empty directory and created several files using the command:</p>
-<p>$ touch file{4,6,7}.txt file{a..e}.txt $ What files, if any, would have been created if we had instead used square brackets? I.e.</p>
-<p>$ touch file[467].txt file[a-e].txt $ We also discussed the effect of running ls file[AB].txt when neither the file fileA.txt, nor the file fileB.txt, nor the file file[AB].txt existed. What would be the effect of running ls file{A,B}.txt under these circumstances?</p>
-<p>Recall the discussion of escaping characters using single quotes, double quotes, and the backslash.</p>
-<p>What would the output of ls be if we issued the following bash commands?</p>
-<p>$ touch “apple_file orange_file” $ touch “apple_file orange_file” $ How can we create the same files as in the previous problem without any quotes? Hint: This requires some careful thought about how to apply the backslash notation. Would single quotes have produced different output files if they were used instead of double quotes in the previous problem?</p>
-<p>What does cp do when given three or more filenames, as in:</p>
-<pre><code>$ ls -F
-intro.txt    methods.txt    survey.txt
-$ cp intro.txt methods.txt survey.txt</code></pre>
-<ol start="4" style="list-style-type: decimal">
-<li>Why do you think cp’s behavior is different from mv’s?</li>
-</ol>
-<p>The command <code>ls -R</code> lists the contents of directories recursively, i.e., lists their sub-directories, sub-sub-directories, and so on in alphabetical order at each level. The command ls -t lists things by time of last change, with most recently changed files or directories first. In what order does <code>ls -R -t</code> display things?</p>
 </div>
 <div id="pipes-and-filters" class="section level2">
 <h2>Pipes and Filters</h2>
@@ -178,9 +171,11 @@ bear</code></pre>
 <h2>Loops</h2>
 <div id="challenges-1" class="section level4">
 <h4>Challenges</h4>
-<p>Suppose that ls initially displays:</p>
+<ol style="list-style-type: decimal">
+<li><p>Suppose that <code>ls</code> initially displays:</p>
 <pre><code>fructose.dat    glucose.dat   sucrose.dat</code></pre>
-<p>What is the output of:</p>
+<p>What is the output of:</p></li>
+</ol>
 <pre><code>for datafile in *.dat
 do
     ls *.dat

@@ -6,6 +6,8 @@ root: ..
 
 ## Syllabus and lesson materials
 
+We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code. [Link to Etherpad](https://etherpad.mozilla.org/2015-05-28-monsanto-R)
+
 ### Day 1
 
 <div class="toc" markdown="1">
