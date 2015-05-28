@@ -1,12 +1,11 @@
 ---
 layout: page
-title: Syllabus
+title: Syllabus and lesson materials
 root: ..
 ---
 
-## Syllabus and lesson materials
 
-We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code. [Link to Etherpad](https://etherpad.mozilla.org/2015-05-28-monsanto-R)
+**_We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code [(Link to Etherpad)](https://etherpad.mozilla.org/2015-05-28-monsanto-R)._**
 
 ### Day 1
 
