@@ -36,6 +36,7 @@ root: ..
 
 #### Git
 
+[Notes for Git lessons](http://swcarpentry.github.io/git-novice/)
 
 </div>
 
@@ -52,8 +53,9 @@ root: ..
 6. [Introduction plyr](12-plyr.html)
 7. [Introduction to Rmarkdown](Rmarkdown.html)
 8. [Wraping up](13-wrap-up.html)
-
-#### [Capstone exercise](capstone.html) (If time permits)
+9. [Capstone exercise](capstone.html) (If time permits)
 
 ####SQL
+
+[Notes for SQL lessons](http://swcarpentry.github.io/sql-novice-survey/)
 </div>
